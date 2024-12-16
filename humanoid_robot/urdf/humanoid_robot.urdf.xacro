@@ -3,6 +3,11 @@
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot name="humanoid_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- # Add this before base link -->
+<link name="dummy_link"></link>
+
+
   <link
     name="base_link">
     <inertial>
@@ -43,6 +48,14 @@
       </geometry>
     </collision>
   </link>
+
+  <!-- # Add this after base link -->
+<joint name="dummy_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="dummy_link"/>
+    <child link="base_link"/>
+</joint>
+
   <link
     name="Hip_Left">
     <inertial>
