@@ -4,32 +4,44 @@
 ### Problem-5: Humanoid Robot [8 pts] 
 A humanoid robot with legs equipped with wheels combines the advantages of bipedal locomotion with the efficiency of wheeled movement, creating a versatile and highly functional machine. 
 
-Create a URDF package for a humanoid robot with legs equipped with wheels.
+## Installation
 
-The dimensions of the robot are arbitrary and can be adjusted as needed to fit the intended application.
-The robot's design features 14 degrees of freedom (DOF) [4 pts] distributed as follows:
+Create a ros2 workspace:
 
-Wheels: 2 DOF for independent control of forward/backward movement and omnidirectional steering.
+```
+mkdir -p ~/ros2_ws/src
+```
 
-Ankles: 2 DOF to allow tilting and rotational adjustments for balance and dynamic movement. 
+Go to the source folder and clone the repository:
 
-Knees: 2 DOF for bending and extending to support walking, crouching, and transitioning to wheeled mode. 
+```
+cd ~/ros2_ws/src
+git clone https://github.com/Madhav2133/enpm662_finalexam.git
+```
 
-Hips:2 DOF to enable forward/backward motion and lateral adjustments during walking or wheeled
-transitions. 
+Come to the workspace folder and compile it:
 
-Shoulders: 2 DOF per arm, allowing forward/backward and lateral movements. 
+```
+cd ~/ros2_ws
+colcon build
+```
 
-Elbows: 2 DOF per arm for bending and rotation, ensuring dexterity and precision in tasks. 
+## Usage
 
-Wrist: 1 DOF for rotational control, enhancing object manipulation. 
+You can run the gazebo simulator using:
 
-Neck: 1 DOF for rotational motion, enabling the robot
-to turn its head for improved situational awareness. 
+```
+ros2 launch humanoid_robot gazebo.launch.py
+```
 
-Include a position controller for all joints to ensure
-precise and coordinated movements across the robot's articulated structure. 
+You can run the rviz and gazebo together using:
 
-Additionally, equip the robot's head with a lidar sensor to enable environment mapping and obstacle detection, enhancing its navigational capabilities.
+```
+ros2 launch humanoid_robot debug.launch.py
+```
 
-The project should incorporate both Gazebo [2 pts] and RViz simulations [2 pts]. In Gazebo, demonstrate that the robot is successfully spawned and remains stable in a zero-gravity environment. In RViz, ensure the sensor data is visualized accurately. There is no requirement to animate or move the robot in this task. For this task, you will collaborate with your teammates from Project 2 to seek assistance and effectively tackle the problem (you can use the same cad models).
+- When you run this, open another terminal and run the following node:
+
+```
+ros2 run joint_state_publisher_gui joint_state_publisher_gui
+```
