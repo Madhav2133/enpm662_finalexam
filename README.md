@@ -4,6 +4,11 @@
 ### Problem-5: Humanoid Robot [8 pts] 
 A humanoid robot with legs equipped with wheels combines the advantages of bipedal locomotion with the efficiency of wheeled movement, creating a versatile and highly functional machine. 
 
+<p align=center>
+<img src="assets/1.png" style="height:300px; width:400px">
+</p>
+
+
 ## Installation
 
 Create a ros2 workspace:
@@ -45,3 +50,7 @@ ros2 launch humanoid_robot debug.launch.py
 ```
 ros2 run joint_state_publisher_gui joint_state_publisher_gui
 ```
+
+<p align=center>
+<img src="assets/2.png" style="height:300px; width:400px">
+</p>
