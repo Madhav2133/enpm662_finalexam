@@ -1,0 +1,1265 @@
+<?xml version="1.0" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="humanoid_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0257675137807607 0.0796050443245808 -0.175628019545647"
+        rpy="0 0 0" />
+      <mass
+        value="0.785611266228412" />
+      <inertia
+        ixx="0.00232144892683997"
+        ixy="-9.66646964514512E-11"
+        ixz="-4.20494584573273E-08"
+        iyy="0.00080951343845414"
+        iyz="1.56915024952233E-09"
+        izz="0.00185284070302783" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Hip_Left">
+    <inertial>
+      <origin
+        xyz="-0.0460948855629927 -0.000633404978639895 -0.00500000000000012"
+        rpy="0 0 0" />
+      <mass
+        value="0.0422229905543193" />
+      <inertia
+        ixx="4.93377000514569E-06"
+        ixy="3.11505363475902E-08"
+        ixz="6.62459006159288E-20"
+        iyy="5.21975537437076E-05"
+        iyz="-4.09365328062258E-21"
+        izz="5.64276072396147E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Hip_Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Hip_Left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Hip_Left_joint"
+    type="revolute">
+    <origin
+      xyz="0.0256999382475379 0.160395069157203 -0.215655780010445"
+      rpy="1.5707963267949 -1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Hip_Left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Knee_Left">
+    <inertial>
+      <origin
+        xyz="-4.8664868527365E-05 -0.0246824334106513 -0.00499999999999981"
+        rpy="0 0 0" />
+      <mass
+        value="0.0168509680282285" />
+      <inertia
+        ixx="5.153181833797E-06"
+        ixy="4.40205832346456E-10"
+        ixz="-1.31172147913639E-22"
+        iyy="1.31447726658588E-06"
+        iyz="-6.53540583782931E-21"
+        izz="6.18680963324574E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Knee_Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Knee_Left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee_Left_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0986752770548977 -0.000568888973472317 0"
+      rpy="3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="Hip_Left" />
+    <child
+      link="Knee_Left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Ankle_Left">
+    <inertial>
+      <origin
+        xyz="-4.85722573273506E-17 -0.026168972506569 -0.00500000000000009"
+        rpy="0 0 0" />
+      <mass
+        value="0.0134465241739722" />
+      <inertia
+        ixx="3.27982399083559E-06"
+        ixy="4.61357713440384E-22"
+        ixz="-1.03779060109383E-22"
+        iyy="8.27884077523161E-07"
+        iyz="-3.66089069550645E-21"
+        izz="3.88359933212588E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Ankle_Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Ankle_Left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Ankle_Left_joint"
+    type="revolute">
+    <origin
+      xyz="-4.7606485263807E-05 -0.0515048052790201 -0.00999999999999979"
+      rpy="0 0 0" />
+    <parent
+      link="Knee_Left" />
+    <child
+      link="Ankle_Left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Wheel_Left">
+    <inertial>
+      <origin
+        xyz="-4.5102810375397E-17 -2.22044604925031E-16 0.00998934280639424"
+        rpy="0 0 0" />
+      <mass
+        value="50.0565989332470737" />
+      <inertia
+        ixx="1.46157549265244E-05"
+        ixy="3.44282493996932E-36"
+        ixz="-2.99330981616354E-21"
+        iyy="1.46157549265244E-05"
+        iyz="-1.38054631500737E-20"
+        izz="2.54470010250422E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Wheel_Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Wheel_Left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_Left_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.0387878119117543 0"
+      rpy="0 0 0" />
+    <parent
+      link="Ankle_Left" />
+    <child
+      link="Wheel_Left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Hip_Right">
+    <inertial>
+      <origin
+        xyz="-0.0460948855629925 -0.000633404978640062 0.00500000000000025"
+        rpy="0 0 0" />
+      <mass
+        value="0.0422229905543193" />
+      <inertia
+        ixx="4.93377000514569E-06"
+        ixy="3.11505363475843E-08"
+        ixz="6.33782229539982E-20"
+        iyy="5.21975537437076E-05"
+        iyz="-3.91242557518173E-21"
+        izz="5.64276072396146E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Hip_Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Hip_Right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Hip_Right_joint"
+    type="revolute">
+    <origin
+      xyz="0.025699938247538 -0.000395069157203428 -0.215655780010445"
+      rpy="1.5707963267949 -1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Hip_Right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Knee_Right">
+    <inertial>
+      <origin
+        xyz="-4.86648685273372E-05 -0.0246824334106512 0.00499999999999978"
+        rpy="0 0 0" />
+      <mass
+        value="0.0168509680282285" />
+      <inertia
+        ixx="5.153181833797E-06"
+        ixy="4.40205832347895E-10"
+        ixz="-2.12776475579533E-22"
+        iyy="1.31447726658588E-06"
+        iyz="-7.25275645325394E-22"
+        izz="6.18680963324574E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Knee_Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Knee_Right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee_Right_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0986752770548977 -0.000568888973472133 0"
+      rpy="-3.14159265358979 0 1.5707963267949" />
+    <parent
+      link="Hip_Right" />
+    <child
+      link="Knee_Right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Ankle_Right">
+    <inertial>
+      <origin
+        xyz="-6.93889390390723E-18 -0.0261689725065688 0.00500000000000006"
+        rpy="0 0 0" />
+      <mass
+        value="0.0134465241739722" />
+      <inertia
+        ixx="3.27982399083559E-06"
+        ixy="-1.44093027665656E-22"
+        ixz="-1.88594420629261E-22"
+        iyy="8.27884077523161E-07"
+        iyz="-4.86816421096848E-23"
+        izz="3.88359933212588E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Ankle_Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Ankle_Right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Ankle_Right_joint"
+    type="revolute">
+    <origin
+      xyz="-4.76064852637931E-05 -0.0515048052790201 0.00999999999999971"
+      rpy="0 0 0" />
+    <parent
+      link="Knee_Right" />
+    <child
+      link="Ankle_Right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Wheel_Right">
+    <inertial>
+      <origin
+        xyz="6.93889390390723E-18 5.55111512312578E-17 -0.00998934280639425"
+        rpy="0 0 0" />
+      <mass
+        value="50.0565989332470737" />
+      <inertia
+        ixx="1.46157549265244E-05"
+        ixy="1.51539884361911E-39"
+        ixz="-2.49944348994177E-21"
+        iyy="1.46157549265244E-05"
+        iyz="-2.53193302136511E-21"
+        izz="2.54470010250422E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Wheel_Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Wheel_Right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_Right_joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.0387878119117543 0"
+      rpy="0 0 0" />
+    <parent
+      link="Ankle_Right" />
+    <child
+      link="Wheel_Right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Abdomen">
+    <inertial>
+      <origin
+        xyz="-0.000471679762693758 0.0510698900204962 -1.13481784427827E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.785611266228412" />
+      <inertia
+        ixx="0.00232144892683997"
+        ixy="-4.20494584573232E-08"
+        ixz="9.66646965340222E-11"
+        iyy="0.00185284070302783"
+        iyz="-1.56915024964279E-09"
+        izz="0.000809513438454139" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Abdomen.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Abdomen.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Waist_joint"
+    type="revolute">
+    <origin
+      xyz="0.0256701058289113 0.08 -0.126697909566144"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Abdomen" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Neck">
+    <inertial>
+      <origin
+        xyz="0.000324944577071593 0.0169688199496082 -1.04083408558608E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.0406246369141447" />
+      <inertia
+        ixx="6.93352079624067E-06"
+        ixy="-1.45865910960902E-10"
+        ixz="7.49094762728022E-20"
+        iyy="8.46346918270928E-06"
+        iyz="2.07632999063209E-22"
+        izz="9.30329444182824E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Neck.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Neck.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Neck_joint"
+    type="revolute">
+    <origin
+      xyz="-0.000569087714543157 0.1 -0.000395069157203609"
+      rpy="-3.14159265358951 1.56590927038749 -3.14159265358951" />
+    <parent
+      link="Abdomen" />
+    <child
+      link="Neck" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="head">
+    <inertial>
+      <origin
+        xyz="0.0253759369420506 0.0251394538864309 0.0201183695718034"
+        rpy="0 0 0" />
+      <mass
+        value="0.101958547710418" />
+      <inertia
+        ixx="3.52513813452901E-05"
+        ixy="8.2646784162417E-09"
+        ixz="3.31218615096138E-09"
+        iyy="3.5779325220443E-05"
+        iyz="-3.8221029462691E-08"
+        izz="4.3341472138856E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/head.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/head.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_joint"
+    type="fixed">
+    <origin
+      xyz="-0.024520585413 0.0338538640951206 -0.0199999999999992"
+      rpy="0 0 0" />
+    <parent
+      link="Neck" />
+    <child
+      link="head" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.101958547710418" />
+      <inertia
+        ixx="3.52513813452901E-05"
+        ixy="8.2646784162417E-09"
+        ixz="3.31218615096138E-09"
+        iyy="3.5779325220443E-05"
+        iyz="-3.8221029462691E-08"
+        izz="4.3341472138856E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+    </collision>
+  </link>
+
+  <gazebo reference="lidar_link">
+  <sensor name="lidar" type="ray">
+    <pose>0.0 0.0 0.0 0 0 0</pose>
+    <always_on>true</always_on>
+    <visualize>true</visualize>
+    <update_rate>5</update_rate>
+    <ray>
+      <scan>
+        <horizontal>
+          <samples>360</samples>
+          <resolution>1.00000</resolution>
+          <min_angle>0.000000</min_angle>
+          <max_angle>6.280000</max_angle>
+        </horizontal>
+      </scan>
+      <range>
+        <min>0.120000</min>
+        <max>3.5</max>
+        <resolution>0.015000</resolution>
+      </range>
+      <noise>
+        <type>gaussian</type>
+        <mean>0.0</mean>
+        <stddev>0.01</stddev>
+      </noise>
+    </ray>
+    <plugin name="scan" filename="libgazebo_ros_ray_sensor.so">
+      <ros>
+        <remapping>~/out:=scan</remapping>
+      </ros>
+      <output_type>sensor_msgs/LaserScan</output_type>
+      <frame_name>lidar_link</frame_name>
+    </plugin>
+  </sensor>
+  </gazebo>
+
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0 0.03 0"
+      rpy="1.57 0 0" />
+    <parent
+      link="head" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+
+  <link
+    name="Arm_Left">
+    <inertial>
+      <origin
+        xyz="2.44006883968334E-06 -0.0394379152453516 -0.00500000000000014"
+        rpy="0 0 0" />
+      <mass
+        value="0.012951320639321" />
+      <inertia
+        ixx="9.25812634718627E-06"
+        ixy="1.31300520728825E-09"
+        ixz="2.1297327389238E-22"
+        iyy="3.28314119438434E-07"
+        iyz="-8.9897096782751E-21"
+        izz="9.37058512263602E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Arm_Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Arm_Left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm_Left_joint"
+    type="revolute">
+    <origin
+      xyz="-0.000646690584708554 0.0865674130625878 -0.08"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="Abdomen" />
+    <child
+      link="Arm_Left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Forearm_Left">
+    <inertial>
+      <origin
+        xyz="0.00025120544402045 -0.0294851166212217 0.0199758386344142"
+        rpy="0 0 0" />
+      <mass
+        value="0.0915379232309165" />
+      <inertia
+        ixx="5.75537519381786E-05"
+        ixy="2.54035938007808E-11"
+        ixz="-5.55586364950197E-10"
+        iyy="1.85681574347204E-05"
+        iyz="2.22234545973201E-09"
+        izz="5.16411295864986E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Forearm_Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Forearm_Left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Forearm_Left_joint"
+    type="revolute">
+    <origin
+      xyz="-0.000251481632186697 -0.080985933529673 0"
+      rpy="0 0 0" />
+    <parent
+      link="Arm_Left" />
+    <child
+      link="Forearm_Left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Hand_Left">
+    <inertial>
+      <origin
+        xyz="4.23731599430432E-06 -0.00651799985193116 -0.00999196156230495"
+        rpy="0 0 0" />
+      <mass
+        value="0.0426809697080671" />
+      <inertia
+        ixx="7.37624971253937E-06"
+        ixy="3.90613799531002E-09"
+        ixz="-2.7286067875235E-10"
+        iyy="1.17998862250473E-05"
+        iyz="7.41017354992619E-09"
+        izz="1.63443299469276E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Hand_Left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Hand_Left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wrist_Left_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.056960589690279 0"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="Forearm_Left" />
+    <child
+      link="Hand_Left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Arm_Right">
+    <inertial>
+      <origin
+        xyz="2.44006883991232E-06 -0.0394379152453518 0.00499999999999983"
+        rpy="0 0 0" />
+      <mass
+        value="0.012951320639321" />
+      <inertia
+        ixx="9.25812634718626E-06"
+        ixy="1.31300520728814E-09"
+        ixz="1.31557985700674E-22"
+        iyy="3.28314119438434E-07"
+        iyz="-9.16681003790065E-21"
+        izz="9.37058512263601E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Arm_Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Arm_Right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Arm_Right_joint"
+    type="revolute">
+    <origin
+      xyz="-0.000646690584708391 0.0865674130625879 0.08"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="Abdomen" />
+    <child
+      link="Arm_Right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Forearm_Right">
+    <inertial>
+      <origin
+        xyz="0.000251205444020602 -0.0294851166212219 -0.0199758386344147"
+        rpy="0 0 0" />
+      <mass
+        value="0.0915379232309165" />
+      <inertia
+        ixx="5.75537519381786E-05"
+        ixy="2.54035938007697E-11"
+        ixz="5.55586364937568E-10"
+        iyy="1.85681574347204E-05"
+        iyz="-2.22234545981848E-09"
+        izz="5.16411295864986E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Forearm_Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Forearm_Right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Forearm_Right_joint"
+    type="revolute">
+    <origin
+      xyz="-0.000251481632186697 -0.080985933529673 0"
+      rpy="0 0 0" />
+    <parent
+      link="Arm_Right" />
+    <child
+      link="Forearm_Right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Hand_Right">
+    <inertial>
+      <origin
+        xyz="4.23731599427657E-06 -0.00651799985193116 0.00999196156230454"
+        rpy="0 0 0" />
+      <mass
+        value="0.0426809697080671" />
+      <inertia
+        ixx="7.37624971253938E-06"
+        ixy="3.90613799531036E-09"
+        ixz="2.7286067875277E-10"
+        iyy="1.17998862250474E-05"
+        iyz="-7.41017354992617E-09"
+        izz="1.63443299469276E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Hand_Right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://humanoid_robot/meshes/Hand_Right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wrist_Right_joint"
+    type="revolute">
+    <origin
+      xyz="0 -0.0569605896902788 0"
+      rpy="0 0 -1.5707963267949" />
+    <parent
+      link="Forearm_Right" />
+    <child
+      link="Hand_Right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  
+   <ros2_control name="GazeboSystem" type="system">
+ <hardware>
+     <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+ </hardware>
+<!-- # Position Controller -->
+ <joint name="Hip_Left_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+  <joint name="Knee_Left_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+   <joint name="Ankle_Left_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+    <joint name="Wheel_Left_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+     <joint name="Hip_Right_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>.
+
+ <joint name="Knee_Right_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+ <joint name="Ankle_Right_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+ <joint name="Wheel_Right_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+ <joint name="Waist_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+ <joint name="Neck_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+  <joint name="Arm_Left_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+  <joint name="Forearm_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+ <joint name="Wrist_Left_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+  <joint name="Arm_Right_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+  <joint name="Forearm_Right_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+
+ <joint name="Wrist_Right_joint">
+     <command_interface name="position">
+         <param name="min">-3.14</param>
+         <param name="max">3.14</param>
+     </command_interface>
+     <state_interface name="position"/>
+     <state_interface name="velocity"/>
+ </joint>
+ </ros2_control>
+
+ <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+        <parameters>$(find humanoid_robot)/config/control.yaml</parameters>
+    </plugin>
+</gazebo>
+
+
+</robot>
